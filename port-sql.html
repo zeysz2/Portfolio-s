@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ind">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Portfolio SQL - Ridha Miftahul Falah</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="responsive.css">
+    </head>
+    <body>
+        <!-- HEADER -->
+        <header>
+            <div class="sql-header">
+                <div class="nav-sql">
+                    <div class="logo-sql">                
+                        <a href="/">Ridha Miftahul Falah</a>
+                    </div>
+                </div>
+
+                <!-- Portfolio SQL -->
+                <section id="text">
+                <div class="port-text">
+                    <h3 class="pre-title">My Portfolio</h3>
+                    <h1 class="name-char">Structured Query Language (SQL)</h1>
+                    <p>
+                        SQL merupakan singkatan dari Structured Query Language. Ini adalah bahasa pemrograman yang digunakan untuk mengakses dan mengelola basis data relasional. 
+                        SQL digunakan untuk melakukan berbagai operasi pada basis data, termasuk pengambilan (query), penambahan (insert), pembaruan (update), penghapusan (delete), 
+                        dan manipulasi struktur basis data (seperti membuat tabel, mengubah tabel, dan membuat indeks).
+                        SQL adalah standar industri yang digunakan oleh sebagian besar sistem manajemen basis data relasional (RDBMS), termasuk MySQL, PostgreSQL, Oracle Database, 
+                        Microsoft SQL Server, dan banyak lainnya.Dengan menggunakan SQL, pengguna dapat dengan mudah berinteraksi dengan basis data, mengekstrak informasi yang diperlukan, 
+                        dan melakukan berbagai operasi yang diperlukan untuk pengembangan dan pemeliharaan aplikasi yang menggunakan basis data relasional. SQL memiliki sintaksis yang terstruktur 
+                        dengan baik, yang membuatnya relatif mudah dipahami dan dipelajari oleh pengembang perangkat lunak maupun analis data.
+                    </p>
+                    &nbsp;
+                    <p>
+                        Kali ini saya akan memberikan penjelasan terhadap project SQL saya yang didapat dari BootCamp MySkill. Pada project ini, saya menggunakan dataset dari
+                        Tokopedia (Bukan data sesungguhnya / Dummy). Berikut penjelasan mengenai table dari dataset yang digunakan, sebagai berikut:
+                    </p>
+                </div>
+                <div class="port-text">
+                    <div class="gambar">
+                    <img src="./Images/dataset.png" alt="Dataset">
+                    <p>1. Dataset Detail</p>
+                    </div>
+                    <p><b>Data Processing</b></p>
+                    <p>Pengolahan data dilakukan dengan menggunakan aplikasi PgAdmin4 yang terintegrasi dengan PostgreSQL.
+                        Tidak lupa untuk mengimport Dataset tersebut kedalam aplikasi PgAdmin4 dengan memberikan nama Database dengan nama FinalProject.
+                        Sebelum mengolah data menggunakan SQL kita harus melakukan pengecekan pada masing-masing table apakah data yang di import sudah 
+                        berhasil ter-import dengan baik dan dapat di eksekusi, sebagai berikut:
+                    </p>
+                    <div class="gambar">
+                    <img src="./Images/sql-1.png" alt="SQL 1">
+                    <p>2. Query Select Table</p>
+                    </div>
+                    <div class="port-text">
+                    <p>
+                        Untuk hasil query tersebut muncul masing-masing table yang sudah di query, sebagai berikut:
+                    </p>
+                    </div>
+                    <div class="gambar">
+                    <img src="./Images/hasil-1.png" alt="Hasil 1">
+                    <p>3. Data Table order_detail</p>
+                    </div>
+                    
+                    <div class="gambar">
+                    <img src="./Images/hasil-2.png" alt="Hasil 2">
+                    <p>4. Data Table sku_detail</p>
+                    </div>
+                    
+                    <div class="gambar">
+                    <img src="./Images/hasil-3.png" alt="Hasil 3">
+                    <p>5. Data Table customer_detail</p>
+                    </div>
+                    
+                    <div class="gambar">
+                    <img src="./Images/hasil-4.png" alt="Hasil 4">
+                    <p>6. Data Table payment_detail</p>
+                    </div>
+                </div>
+
+                <div class="port-text">
+                    <p>Data yang diimport telah berhasil di eksekusi untuk menampilkan data pada setiap table dari dataset ini. Oke, dengan 
+                        itu mari kita menuju kepembahasan selanjutnya.
+                    </p>
+                    <br>
+                    <p><b>
+                        Questions & Answer
+                    </b></p>
+                    <p><b>Nomor 1</b></p>
+                       <p> Q: Selama transaksi yang terjadi selama 2021, pada bulan apa total nilai transaksi
+                        (after_discount) paling besar? Gunakan is_valid = 1 untuk memfilter data transaksi.
+                    </p>
+                    <p>Source table: order_detail</p>
+
+                    <div class="gambar">
+                    <img src="./Images/Query/query-1.png" alt="Query 1">
+                    <p>7. Query Nomor 1</p>
+                    </div>
+
+                    <div class="gambar">
+                    <img src="./Images/Hasil/hasil-query1.png" alt="HQue 1">
+                    <p>8. Hasil Query Nomor 1</p>
+                    </div>
+
+                    <p>Dari table diatas terlihat bahwa nilai transaksi (after_discount) paling besar selama tahun 2021
+                        terdapat pada bulan agustus, dengan total transaksinya sebesar 227.862.744. Dalam query tersebut menggunakan
+                        extract untuk memfilter tahun berdasarkan tahun 2021 dan to_char untuk menampilkan nama bulannya. Kemudian
+                        digroup by dengan bulan dan order by total transaksinya, dengan pengurutan data dari besar ke kecil. Karena ingin
+                        menampilkan nilai total_transaksi yang paling besar saja saya batasi dengan limit 1.
+                    </p>
+                </div>
+
+                <div class="port-text">
+                    <p><b>Nomor 2</b></p>
+                    <p>Q: Selama transaksi pada tahun 2022, kategori apa yang menghasilkan nilai transaksi paling
+                    besar? Gunakan is_valid = 1 untuk memfilter data transaksi.
+                    </p>
+                    <p>Source table: order_detail, sku_detail</p>
+
+                    <div class="gambar">
+                    <img src="./Images/Query/query-2.png" alt="Query 2">
+                    <p>9. Query Nomor 2</p>
+                    </div>
+
+                    <div class="gambar">
+                    <img src="./Images/Hasil/hasil-query2.png" alt="HQue 2">
+                    <p>10. Hasil Query Nomor 2</p>
+                    </div>
+
+                    <p>Dari table diatas terlihat bahwa nilai transaksi (after_discount) paling besar selama tahun 2021
+                        terdapat pada bulan agustus, dengan total transaksinya sebesar 227.862.744. Dalam query tersebut menggunakan
+                        extract untuk memfilter tahun berdasarkan tahun 2021 dan to_char untuk menampilkan nama bulannya. Kemudian
+                        digroup by dengan bulan dan order by total transaksinya, dengan pengurutan data dari besar ke kecil. Karena ingin
+                        menampilkan nilai total_transaksi yang paling besar saja saya batasi dengan limit 1.
+                    </p>
+                </div>
+                </div>
+            </section>
+            <!-- Portfolio END -->
+            </div>
+        </header>
+         <!-- HEADER END-->
+             <!-- CopyRight -->
+        <footer>
+            <div class="footer">
+                <P>&#169; 2024 - Created by Ridha Miftahul Falah | Portfolio's Website</P>
+            </div>
+        </footer>
+            <!-- CopyRight END -->
+
+
+    </body>
+</html>
